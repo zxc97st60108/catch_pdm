@@ -1,0 +1,8 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+D:/Vivado/catch_pdm/catch_pdm.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
+D:/Vivado/catch_pdm/catch_pdm.srcs/sources_1/ip/pdm_clock/pdm_clock.v,1605446391,verilog,,D:/Vivado/catch_pdm/catch_pdm.srcs/sources_1/new/input_pdm.v,,pdm_clock,,,../../../../catch_pdm.srcs/sources_1/ip/pdm_clock,,,,,
+D:/Vivado/catch_pdm/catch_pdm.srcs/sources_1/ip/pdm_clock/pdm_clock_clk_wiz.v,1605446391,verilog,,D:/Vivado/catch_pdm/catch_pdm.srcs/sources_1/ip/pdm_clock/pdm_clock.v,,pdm_clock_clk_wiz,,,../../../../catch_pdm.srcs/sources_1/ip/pdm_clock,,,,,
+D:/Vivado/catch_pdm/catch_pdm.srcs/sources_1/new/input_pdm.v,1605446731,verilog,,,,input_pdm,,,../../../../catch_pdm.srcs/sources_1/ip/pdm_clock,,,,,

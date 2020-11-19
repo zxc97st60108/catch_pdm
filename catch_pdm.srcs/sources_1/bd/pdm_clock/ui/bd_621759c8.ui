@@ -1,0 +1,15 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS-threadsafe
+#  -string -flagsOSRD
+preplace port clk_100MHz -pg 1 -y -100 -defaultsOSRD
+preplace port reset_rtl_0 -pg 1 -y -120 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 1 -y -110 -defaultsOSRD
+preplace netloc reset_rtl_0_1 1 0 1 NJ
+preplace netloc clk_100MHz_1 1 0 1 NJ
+levelinfo -pg 1 -460 -340 210 -top -240 -bot 140
+"
+}
+{
+   "da_board_cnt":"6"
+}

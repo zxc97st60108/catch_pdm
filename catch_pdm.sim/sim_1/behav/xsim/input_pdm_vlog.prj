@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../catch_pdm.srcs/sources_1/ip/pdm_clock" \
+"../../../../catch_pdm.srcs/sources_1/ip/pdm_clock/pdm_clock_clk_wiz.v" \
+"../../../../catch_pdm.srcs/sources_1/ip/pdm_clock/pdm_clock.v" \
+"../../../../catch_pdm.srcs/sources_1/new/input_pdm.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
