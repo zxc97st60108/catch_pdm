@@ -17,7 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param synth.elaboration.rodinMoreOptions {rt::set_parameter var_size_limit 4194304}
 set_param xicom.use_bs_reader 1
 set_msg_config  -id {Synth 8-4556}  -suppress 
 create_project -in_memory -part xc7a100tcsg324-3
@@ -31,7 +30,11 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo d:/Vivado/catch_pdm/catch_pdm.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_verilog -library xil_defaultlib D:/Vivado/catch_pdm/catch_pdm.srcs/sources_1/new/input_pdm.v
+read_verilog -library xil_defaultlib {
+  D:/Vivado/catch_pdm/catch_pdm.srcs/sources_1/new/uart_rx.v
+  D:/Vivado/catch_pdm/catch_pdm.srcs/sources_1/new/uart_tx.v
+  D:/Vivado/catch_pdm/catch_pdm.srcs/sources_1/new/input_pdm.v
+}
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be

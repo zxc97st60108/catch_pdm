@@ -20,7 +20,7 @@ integer i;
 integer a = 0;
 
 
-reg r_Clock = 0;
+//reg clock = 0;
 reg r_Tx_DV = 0;
 wire w_Tx_Done;
 reg [7:0] r_Tx_Byte = 0;
@@ -35,14 +35,14 @@ reg [7:0] pdm_array [0:`bound];
 
 
   uart_rx #(.CLKS_PER_BIT(c_CLKS_PER_BIT)) UART_RX_INST
-    (.i_Clock(r_Clock),
+    (.i_Clock(clock),
      .i_Rx_Serial(r_Rx_Serial),
      .o_Rx_DV(),
      .o_Rx_Byte(w_Rx_Byte)
      );
    
   uart_tx #(.CLKS_PER_BIT(c_CLKS_PER_BIT)) UART_TX_INST
-    (.i_Clock(r_Clock),
+    (.i_Clock(clock),
      .i_Tx_DV(r_Tx_DV),
      .i_Tx_Byte(r_Tx_Byte),
      .o_Tx_Active(),
@@ -77,10 +77,22 @@ begin
             pdm<=0;
             
         if(a > 20000)begin
-//            pdm = 1;
+            pdm = 1;
+                r_Tx_DV <= 1'b1;
+            r_Tx_Byte <= 8'hAB;
+            //@(posedge clock);
+            r_Tx_DV <= 1'b0;
+            //@(posedge w_Tx_Done);
+            
+            // Send a command to the UART (exercise Rx)
+            //@(posedge clock);
+            UART_WRITE_BYTE(8'h3F);
+            
             $finish;
 
         end
+
+
         // pdm_array[a] <= pdmshift(pdm_array[a], pdm_data);
         // pdm_array[a] = ((pdm_array[a] << 1)  + pdm_data);
         // $display("counter = %d \n", count);
@@ -92,7 +104,31 @@ always @(pdm_data) begin
     // pdm_array[a] <= pdmshift(pdm_array[a], pdm_data);
     pdm_array[a] <= ((pdm_array[a] << 1)  + pdm_data);
 end
-    
+
+    task UART_WRITE_BYTE;
+    input [7:0] i_Data;
+    integer     ii;
+    begin
+       
+      // Send Start Bit
+      r_Rx_Serial <= 1'b0;
+      #(c_BIT_PERIOD);
+      #1000;
+       
+       
+      // Send Data Byte
+      for (ii=0; ii<8; ii=ii+1)
+        begin
+          r_Rx_Serial <= i_Data[ii];
+          $display("data = %b " , i_Data[ii]);
+          #(c_BIT_PERIOD);
+        end
+       
+      // Send Stop Bit
+      r_Rx_Serial <= 1'b1;
+      #(c_BIT_PERIOD);
+     end
+  endtask // UART_WRITE_BYTE
 // function [31:0] pdmshift ;
 //     input [31:0] array;
 //     input data;

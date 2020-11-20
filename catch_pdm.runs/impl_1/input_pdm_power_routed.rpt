@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date             : Wed Nov 18 15:00:17 2020
+| Date             : Thu Nov 19 23:16:39 2020
 | Host             : DESKTOP-4I669P4 running 64-bit major release  (build 9200)
 | Command          : report_power -file input_pdm_power_routed.rpt -pb input_pdm_power_summary_routed.pb -rpx input_pdm_power_routed.rpx
 | Design           : input_pdm
@@ -30,15 +30,15 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.084        |
+| Total On-Chip Power (W)  | 0.803        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.000        |
-| Device Static (W)        | 0.084        |
+| Dynamic (W)              | 0.704        |
+| Device Static (W)        | 0.099        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 99.6         |
-| Junction Temperature (C) | 25.4         |
-| Confidence Level         | High         |
+| Max Ambient (C)          | 96.3         |
+| Junction Temperature (C) | 28.7         |
+| Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
 | Design Nets Matched      | NA           |
@@ -49,15 +49,20 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+--------------+-----------+----------+-----------+-----------------+
-| On-Chip      | Power (W) | Used     | Available | Utilization (%) |
-+--------------+-----------+----------+-----------+-----------------+
-| Slice Logic  |     0.000 |        1 |       --- |             --- |
-|   Others     |     0.000 |        1 |       --- |             --- |
-| I/O          |     0.000 |        1 |       210 |            0.48 |
-| Static Power |     0.084 |          |           |                 |
-| Total        |     0.084 |          |           |                 |
-+--------------+-----------+----------+-----------+-----------------+
++----------------+-----------+----------+-----------+-----------------+
+| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
++----------------+-----------+----------+-----------+-----------------+
+| Slice Logic    |     0.114 |       88 |       --- |             --- |
+|   LUT as Logic |     0.085 |       22 |     63400 |            0.03 |
+|   CARRY4       |     0.017 |       12 |     15850 |            0.08 |
+|   BUFG         |     0.006 |        1 |        32 |            3.13 |
+|   Register     |     0.006 |       36 |    126800 |            0.03 |
+|   Others       |     0.000 |        2 |       --- |             --- |
+| Signals        |     0.082 |       52 |       --- |             --- |
+| I/O            |     0.508 |        3 |       210 |            1.43 |
+| Static Power   |     0.099 |          |           |                 |
+| Total          |     0.803 |          |           |                 |
++----------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -66,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.015 |       0.000 |      0.015 |
-| Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |
-| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vccint    |       1.000 |     0.217 |       0.200 |      0.017 |
+| Vccaux    |       1.800 |     0.037 |       0.018 |      0.018 |
+| Vcco33    |       3.300 |     0.147 |       0.143 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -85,17 +90,17 @@ Table of Contents
 1.3 Confidence Level
 --------------------
 
-+-----------------------------+------------+------------------------------------------------+--------+
-| User Input Data             | Confidence | Details                                        | Action |
-+-----------------------------+------------+------------------------------------------------+--------+
-| Design implementation state | High       | Design is routed                               |        |
-| Clock nodes activity        | High       | User specified more than 95% of clocks         |        |
-| I/O nodes activity          | High       | User specified more than 95% of inputs         |        |
-| Internal nodes activity     | High       | User specified more than 25% of internal nodes |        |
-| Device models               | High       | Device models are Production                   |        |
-|                             |            |                                                |        |
-| Overall confidence level    | High       |                                                |        |
-+-----------------------------+------------+------------------------------------------------+--------+
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                             |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                                    |
+| Clock nodes activity        | Low        | User specified less than 75% of clocks                 | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
+| Device models               | High       | Device models are Production                           |                                                                                                                    |
+|                             |            |                                                        |                                                                                                                    |
+| Overall confidence level    | Low        |                                                        |                                                                                                                    |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 
 2. Settings
@@ -130,8 +135,10 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------+-----------+
-| Name | Power (W) |
-+------+-----------+
++-----------+-----------+
+| Name      | Power (W) |
++-----------+-----------+
+| input_pdm |     0.704 |
++-----------+-----------+
 
 

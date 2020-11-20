@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1605682715">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1605798892">
   <File Type="BITSTR-BMM" Name="input_pdm_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="input_pdm_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="input_pdm_timing_summary_init.rpt"/>
@@ -71,6 +71,20 @@
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/uart_rx.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/uart_tx.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/input_pdm.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>

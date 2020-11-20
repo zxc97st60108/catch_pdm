@@ -1,0 +1,141 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Nov 19 21:46:20 2020
+# Process ID: 4388
+# Current directory: D:/Vivado/catch_pdm
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20256 D:\Vivado\catch_pdm\catch_pdm.xpr
+# Log file: D:/Vivado/catch_pdm/vivado.log
+# Journal file: D:/Vivado/catch_pdm\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Vivado/catch_pdm/catch_pdm.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 809.074 ; gain = 165.984
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Thu Nov 19 21:46:57 2020] Launched synth_1...
+Run output will be captured here: D:/Vivado/catch_pdm/catch_pdm.runs/synth_1/runme.log
+[Thu Nov 19 21:46:57 2020] Launched impl_1...
+Run output will be captured here: D:/Vivado/catch_pdm/catch_pdm.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Thu Nov 19 21:55:14 2020] Launched synth_1...
+Run output will be captured here: D:/Vivado/catch_pdm/catch_pdm.runs/synth_1/runme.log
+[Thu Nov 19 21:55:14 2020] Launched impl_1...
+Run output will be captured here: D:/Vivado/catch_pdm/catch_pdm.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Thu Nov 19 21:55:47 2020] Launched synth_1...
+Run output will be captured here: D:/Vivado/catch_pdm/catch_pdm.runs/synth_1/runme.log
+[Thu Nov 19 21:55:47 2020] Launched impl_1...
+Run output will be captured here: D:/Vivado/catch_pdm/catch_pdm.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Thu Nov 19 22:07:37 2020] Launched synth_1...
+Run output will be captured here: D:/Vivado/catch_pdm/catch_pdm.runs/synth_1/runme.log
+[Thu Nov 19 22:07:37 2020] Launched impl_1...
+Run output will be captured here: D:/Vivado/catch_pdm/catch_pdm.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Thu Nov 19 22:08:12 2020] Launched synth_1...
+Run output will be captured here: D:/Vivado/catch_pdm/catch_pdm.runs/synth_1/runme.log
+[Thu Nov 19 22:08:13 2020] Launched impl_1...
+Run output will be captured here: D:/Vivado/catch_pdm/catch_pdm.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Thu Nov 19 22:11:13 2020] Launched synth_1...
+Run output will be captured here: D:/Vivado/catch_pdm/catch_pdm.runs/synth_1/runme.log
+[Thu Nov 19 22:11:13 2020] Launched impl_1...
+Run output will be captured here: D:/Vivado/catch_pdm/catch_pdm.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210248470371
+current_hw_device [get_hw_devices xc7z020_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z020_1] 0]
+INFO: [Labtools 27-1434] Device xc7z020 (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z020_1]
+set_property PROGRAM.FILE {D:/Vivado/catch_pdm/catch_pdm.runs/impl_1/input_pdm.bit} [get_hw_devices xc7z020_1]
+program_hw_devices [get_hw_devices xc7z020_1]
+ERROR: [Labtools 27-3303] Incorrect bitstream assigned to device. Bitfile is incompatible for this device.
+INFO: [Labtools 27-3164] End of startup status: HIGH
+ERROR: [Common 17-39] 'program_hw_devices' failed due to earlier errors.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210248470371
+disconnect_hw_server localhost:3121
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A40329A
+set_property PROGRAM.FILE {D:/Vivado/catch_pdm/catch_pdm.runs/impl_1/input_pdm.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/Vivado/catch_pdm/catch_pdm.runs/impl_1/input_pdm.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A40329A
+set_property PROGRAM.FILE {D:/Vivado/catch_pdm/catch_pdm.runs/impl_1/input_pdm.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1435] Device xc7a100t (JTAG device index = 0) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/Vivado/catch_pdm/catch_pdm.runs/impl_1/input_pdm.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/Vivado/catch_pdm/catch_pdm.runs/impl_1/input_pdm.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+close_hw
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Vivado/catch_pdm/catch_pdm.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+[Thu Nov 19 23:14:52 2020] Launched synth_1...
+Run output will be captured here: D:/Vivado/catch_pdm/catch_pdm.runs/synth_1/runme.log
+[Thu Nov 19 23:14:52 2020] Launched impl_1...
+Run output will be captured here: D:/Vivado/catch_pdm/catch_pdm.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292A40329A
+set_property PROGRAM.FILE {D:/Vivado/catch_pdm/catch_pdm.runs/impl_1/input_pdm.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {D:/Vivado/catch_pdm/catch_pdm.runs/impl_1/input_pdm.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292A40329A
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Nov 19 23:25:12 2020...
